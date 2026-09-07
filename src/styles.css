@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root { font-family: Manrope, sans-serif; color: #eeeae3; background: #111210; font-synthesis: none; }
+* { box-sizing: border-box; } body { margin: 0; min-width: 320px; } button, textarea { font: inherit; }
+.app-shell { display: grid; grid-template-columns: minmax(260px, 31%) 1fr; min-height: 100vh; }
+.sidebar { background: #191a17; padding: 42px 48px 38px; display: flex; flex-direction: column; }
+.brand { font-weight: 800; font-size: 21px; letter-spacing: -.06em; } .spark { color: #c7ed72; font-size: 1.15em; margin-right: 7px; }
+.sidebar-copy { margin: auto 0; max-width: 280px; } .eyebrow, .message-author { color: #8b8e87; text-transform: uppercase; letter-spacing: .16em; font: 500 10px 'DM Mono', monospace; }
+.sidebar h1 { font-size: clamp(36px, 4vw, 58px); line-height: .98; letter-spacing: -.07em; margin: 18px 0; } .sidebar-copy p { color: #9b9d96; line-height: 1.7; font-size: 14px; max-width: 230px; }
+.sidebar-footer { color: #8b8e87; font: 11px 'DM Mono', monospace; margin-top: auto; } .status-dot { display: inline-block; width: 7px; height: 7px; margin-right: 8px; border-radius: 50%; background: #c7ed72; box-shadow: 0 0 0 4px #293025; }
+.chat-panel { display: flex; flex-direction: column; min-height: 100vh; background: #111210; } .chat-header { display: flex; justify-content: space-between; align-items: center; padding: 40px 7%; border-bottom: 1px solid #292a26; }
+.chat-header h2 { font-size: 16px; font-weight: 600; margin: 9px 0 0; } .clear-button { border: 1px solid #343630; border-radius: 5px; background: transparent; color: #9b9d96; cursor: pointer; padding: 9px 12px; font-size: 12px; }
+.clear-button:hover { color: #eeeae3; border-color: #696d62; } .clear-button span { color: #666a60; font: 10px 'DM Mono', monospace; margin-left: 9px; }
+.messages { width: min(690px, 84%); flex: 1; margin: 0 auto; padding: 56px 0 32px; } .message-row { display: flex; gap: 15px; margin-bottom: 38px; } .message-row.user { justify-content: flex-end; padding-left: 15%; }
+.message-row.user .message-content { background: #242720; border: 1px solid #30352b; border-radius: 10px 2px 10px 10px; padding: 15px 19px; } .message-content { max-width: 620px; }
+.message-author { display: block; margin: 2px 0 10px; font-size: 9px; } .message-content p { margin: 0; color: #d4d4ce; line-height: 1.75; font-size: 14px; white-space: pre-wrap; }
+.avatar { flex: 0 0 29px; width: 29px; height: 29px; display: grid; place-items: center; border: 1px solid #4b5937; border-radius: 50%; color: #c7ed72; } .avatar .spark { margin: 0; font-size: 15px; }
+.typing { display: flex; gap: 4px; padding-top: 6px; } .typing i { width: 5px; height: 5px; border-radius: 50%; background: #c7ed72; animation: blink 1s infinite; } .typing i:nth-child(2) { animation-delay: .15s; } .typing i:nth-child(3) { animation-delay: .3s; }
+@keyframes blink { 0%, 80%, 100% { opacity: .25; } 40% { opacity: 1; } }
+.composer-wrap { width: min(690px, 84%); margin: auto auto 36px; } .composer { display: flex; align-items: flex-end; gap: 12px; background: #1b1d19; border: 1px solid #3b4034; border-radius: 8px; padding: 12px; }
+textarea { width: 100%; resize: none; outline: 0; border: 0; background: transparent; color: #eeeae3; font-size: 14px; line-height: 1.5; padding: 5px; max-height: 120px; } textarea::placeholder { color: #777b70; }
+.send-button { width: 35px; height: 35px; border: 0; border-radius: 5px; background: #c7ed72; color: #20251b; font-size: 22px; line-height: 1; cursor: pointer; } .send-button:disabled { opacity: .3; cursor: not-allowed; }
+.composer-hint { text-align: center; color: #60645c; font: 10px 'DM Mono', monospace; margin: 13px 0 0; } .error-message { color: #f0a5a0; font-size: 12px; margin-bottom: 10px; }
+@media (max-width: 700px) { .app-shell { display: block; } .sidebar { min-height: 220px; padding: 28px 24px; } .sidebar-copy { margin: 34px 0 0; } .sidebar h1 { font-size: 38px; margin: 10px 0; } .sidebar-copy p, .sidebar-footer { display: none; } .chat-panel { min-height: calc(100vh - 220px); } .chat-header { padding: 24px; } .messages, .composer-wrap { width: calc(100% - 48px); } .messages { padding-top: 32px; } }
